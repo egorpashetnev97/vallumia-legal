@@ -1,26 +1,377 @@
 <!doctype html>
+<!--
+  Vallumia — Terms of Use / Условия использования.
+  Файл кладётся в репозиторий страниц как terms/index.html.
+
+  ПЕРЕД ПУБЛИКАЦИЕЙ:
+  1. Заменить все метки {{...}} настоящими значениями (их четыре вида).
+  2. Удалить блок <div id="draft-banner"> ниже вместе с этим комментарием.
+  3. Сверить дату в обоих языках.
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vallumia — Terms of Use</title>
+<meta name="color-scheme" content="dark light">
 <style>
-  :root { color-scheme: dark; }
-  body { background:#0e0e10; color:#e6e3dd; font:16px/1.6 -apple-system,system-ui,sans-serif;
-         margin:0 auto; padding:40px 20px; max-width:38em; }
-  h1,h2 { font-weight:600; letter-spacing:.01em; }
-  h2 { margin-top:2.5em; }
-  a { color:#c2a669; }
-  hr { border:0; border-top:1px solid #2a2a2e; margin:3em 0; }
+  :root {
+    --bg: #0e0e10;
+    --fg: #e6e3dd;
+    --muted: #9a958c;
+    --faint: #6f6b64;
+    --line: #26262a;
+    --accent: #c2a669;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    margin: 0;
+    padding: 0 16px 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 40em; margin: 0 auto; }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(var(--bg) 70%, rgba(14,14,16,0));
+    padding: 20px 0 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .mark {
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .langs { display: flex; gap: 6px; flex: none; }
+  .langs button {
+    font: inherit;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .langs button[aria-pressed="true"] {
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  h1 { font-size: 27px; font-weight: 600; line-height: 1.25; margin: 24px 0 4px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 40px 0 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 16px; font-weight: 600; margin: 24px 0 4px; }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  .date { color: var(--faint); font-size: 14px; margin: 0 0 8px; }
+  .lede { color: var(--muted); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
+
+  #draft-banner {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border: 1px solid #7a4a3a;
+    border-radius: 10px;
+    background: #1c1412;
+    color: #e0b8a6;
+    font-size: 14px;
+  }
+  #draft-banner code { color: #f0cdb8; }
+
+  /* Виден ровно один язык — тот, на котором стоит метка .on.
+     Метка проставлена в разметке (английский), поэтому и без
+     JavaScript страница показывает один текст, а не два. */
+  [data-lang] { display: none; }
+  [data-lang].on { display: block; }
 </style>
 </head>
 <body>
+<div class="wrap">
+
+<header>
+  <span class="mark">Vallumia</span>
+  <span class="langs">
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+    <button type="button" data-set="ru" aria-pressed="false">Русский</button>
+  </span>
+</header>
+
+<div id="draft-banner">
+  <strong>Черновик.</strong> Перед публикацией заменить метки
+  <code>{{ИМЯ РАЗРАБОТЧИКА}}</code>, <code>{{ПОЧТА ПОДДЕРЖКИ}}</code>,
+  <code>{{СТРАНА}}</code>, <code>{{СУД}}</code> и удалить этот блок.
+</div>
+
+<!-- ======================= ENGLISH ======================= -->
+<div data-lang="en" class="on">
+
   <h1>Terms of Use</h1>
-  <p>Last updated: 2026-09-17</p>
-  <p>Draft.</p>
-  <hr>
-  <h1 id="ru">Условия использования</h1>
-  <p>Обновлено: 17.09.2026</p>
-  <p>Черновик.</p>
+  <p class="date">Last updated: September 17, 2026</p>
+  <p class="lede">These terms are an agreement between you and {{ИМЯ РАЗРАБОТЧИКА}} (“we,” “us”), the developer of the Vallumia app for iPhone. By installing or using Vallumia, you accept them. If you don’t accept them, don’t use the app.</p>
+
+  <h2>1. What the app is</h2>
+  <p>Vallumia is a camera app built on film-era mechanics. A roll is shot blind and developed over days. A plate is exposed once a day, accumulating frames over a long exposure. The waiting is the product, not a defect in it.</p>
+  <p>You don’t create an account, and there is nothing to sign in to. Everything the app makes stays on your device.</p>
+
+  <h2>2. Rules of the app you should know before you buy</h2>
+  <p>Vallumia works the way it does on purpose. These rules are permanent and apply to everyone, paid or not:</p>
+  <ul>
+    <li>there is no preview of a frame you shot on a roll until the roll is developed;</li>
+    <li>a frame can’t be deleted or re-shot before development;</li>
+    <li>photos can’t be imported from your library into a roll or a plate;</li>
+    <li><strong>waiting can’t be shortened, and we will never sell a way to shorten it.</strong> Development timers run on real time and are protected against changing your device clock.</li>
+  </ul>
+  <p>If any of this is unacceptable to you, the app is not for you — and that is a better outcome than a refund.</p>
+
+  <h2>3. Your photos</h2>
+  <p>Negatives, positives, plates and notes are stored on your device, inside the app. We have no access to them, they are not uploaded anywhere, and we can’t recover them for you.</p>
+  <ul>
+    <li>Copies of developed frames are mirrored to your Photos library, where they live under your own control.</li>
+    <li>Deleting the app deletes everything the app holds, including rolls in development. This can’t be undone.</li>
+    <li>Backups are yours to make. See the Privacy Policy for which of the app’s data is included in an iCloud or computer backup.</li>
+  </ul>
+  <p>You keep all rights to the images you make. We claim none.</p>
+
+  <h2>4. The Lab subscription</h2>
+  <p>Some parts of the app are opened by a paid subscription called the Lab. What it opens is shown in the app at the moment of purchase and may change as the app develops; at the time of writing it is:</p>
+  <ul>
+    <li>film stocks from the codex, including seasonal limited editions during their windows;</li>
+    <li>a second roll running in parallel;</li>
+    <li>full-size copies mirrored to your Photos library.</li>
+  </ul>
+  <p>The subscription is offered as a monthly plan, an annual plan, and a one-time “lifetime” purchase. Prices are shown in the app exactly as the App Store reports them for your region; they may differ between regions and may change over time. We never show a price we made up.</p>
+  <p>Limited editions taken into your collection while you were subscribed stay yours, subscription or not.</p>
+
+  <h2>5. Free trial</h2>
+  <p>The annual plan may be offered with a free trial. When it is, the app states the length of the trial and the price charged after it, before you buy.</p>
+  <ul>
+    <li>A trial is available only if your Apple Account is eligible for it. Eligibility is determined by Apple, not by us.</li>
+    <li>If you buy a subscription during a trial, any unused part of the trial is forfeited.</li>
+    <li>Unless you cancel at least 24 hours before the trial ends, it turns into a paid subscription automatically.</li>
+  </ul>
+
+  <h2>6. Automatic renewal and cancellation</h2>
+  <ul>
+    <li>A subscription renews automatically at the end of each period unless auto-renewal is turned off at least 24 hours before the period ends.</li>
+    <li>Your Apple Account is charged within 24 hours before the start of each new period, at the price then shown for your plan.</li>
+    <li>You can manage or cancel a subscription in your Apple Account settings: <em>Settings → your name → Subscriptions</em>. The app can open that page for you, but only you can cancel.</li>
+    <li>Cancelling stops future renewals. It doesn’t shorten the period you already paid for, and it doesn’t refund it.</li>
+    <li>Deleting the app does <strong>not</strong> cancel a subscription.</li>
+  </ul>
+
+  <h2>7. The lifetime purchase</h2>
+  <p>The lifetime plan is a single payment, not a subscription: nothing renews and there is nothing to cancel. It opens the same things the subscription opens, for as long as the app exists and runs on your device. It is not a promise that the app will be developed or supported forever.</p>
+
+  <h2>8. Restoring purchases</h2>
+  <p>Purchases are tied to your Apple Account. On a new device, or after reinstalling, use <em>Restore purchases</em> in the app to get access back. Purchases are not tied to your photos, and restoring them does not bring back rolls or plates.</p>
+
+  <h2>9. Payments and refunds</h2>
+  <p>All purchases are processed by Apple through the App Store. We don’t see or handle your payment details, and we can’t issue refunds. Refund requests go to Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Whether a refund is granted is Apple’s decision under its own terms.</p>
+
+  <h2>10. Changes to the app and to these terms</h2>
+  <p>The app changes: features are added, and some may be reworked or removed. The rules in section 2 are the part we commit to keeping.</p>
+  <p>We may update these terms. The date at the top says when they last changed. Continuing to use the app after a change means you accept the updated terms; if you don’t, stop using the app and cancel any subscription.</p>
+
+  <h2>11. Acceptable use</h2>
+  <p>Use the app lawfully. Don’t attempt to break, decompile or circumvent the paid parts of the app or its timers, and don’t use the app to make images that are unlawful where you are.</p>
+
+  <h2>12. Intellectual property</h2>
+  <p>The app, its name, its interface, its artwork and its film-emulation profiles belong to us and are licensed to you, not sold. You get a personal, non-transferable license to use the app on Apple devices you own or control, as permitted by the App Store Terms of Service. The images you shoot are yours.</p>
+
+  <h2>13. Disclaimer</h2>
+  <p>The app is provided “as is.” To the extent permitted by law, we disclaim all warranties, express or implied, including fitness for a particular purpose. We don’t warrant that the app will be uninterrupted or error-free, or that a photograph you expect will survive a bug, a crash, or a device failure. Treat anything irreplaceable accordingly: this is a camera that keeps its work on one device.</p>
+
+  <h2>14. Limitation of liability</h2>
+  <p>To the extent permitted by law, we are not liable for indirect, incidental or consequential damages, or for lost images or lost data. Where liability can’t be excluded, it is limited to the amount you paid us for the app in the twelve months before the claim.</p>
+  <p>Nothing here limits rights you have as a consumer that can’t be limited under the law of your country.</p>
+
+  <h2>15. Terms required by Apple</h2>
+  <p>Apple requires the following to be part of this agreement:</p>
+  <ul>
+    <li>This agreement is between you and us only, not with Apple. Apple is not responsible for the app or its content.</li>
+    <li>Your license to use the app is limited to Apple devices you own or control, under the Usage Rules of the App Store Terms of Service.</li>
+    <li>We, not Apple, are solely responsible for support and maintenance of the app. Apple has no obligation to provide any.</li>
+    <li>If the app fails to conform to any warranty, you may notify Apple, and Apple may refund the purchase price. To the maximum extent permitted by law, Apple has no other warranty obligation regarding the app.</li>
+    <li>We, not Apple, are responsible for addressing any claim about the app: product liability, a failure to conform to legal requirements, or consumer-protection claims.</li>
+    <li>We, not Apple, are responsible for investigating and defending any claim that the app infringes someone’s intellectual property.</li>
+    <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as terrorist-supporting, and are not on any U.S. Government list of prohibited or restricted parties.</li>
+    <li>Apple and its subsidiaries are third-party beneficiaries of this agreement and have the right to enforce it against you.</li>
+  </ul>
+
+  <h2>16. Governing law</h2>
+  <p>These terms are governed by the laws of {{СТРАНА}}, without regard to conflict-of-law rules. Disputes are subject to the courts of {{СУД}}, except where the law of your country of residence gives you the right to bring proceedings elsewhere.</p>
+
+  <h2>17. Contact</h2>
+  <p>Questions about these terms, or about the app: <a href="mailto:{{ПОЧТА ПОДДЕРЖКИ}}">{{ПОЧТА ПОДДЕРЖКИ}}</a>.</p>
+  <p>How the app handles data is described separately in the <a href="../privacy/">Privacy Policy</a>.</p>
+
+</div>
+
+<!-- ======================= РУССКИЙ ======================= -->
+<div data-lang="ru">
+
+  <h1>Условия использования</h1>
+  <p class="date">Обновлено: 17 сентября 2026</p>
+  <p class="lede">Эти условия — соглашение между вами и {{ИМЯ РАЗРАБОТЧИКА}} («мы»), разработчиком приложения Vallumia для iPhone. Устанавливая приложение или пользуясь им, вы их принимаете. Не принимаете — не пользуйтесь.</p>
+
+  <h2>1. Что это за приложение</h2>
+  <p>Vallumia — камера с механикой плёночной эпохи. Катушка снимается вслепую и проявляется днями. Пластина снимается одна в день и набирает кадры длинной выдержкой. Ожидание здесь — часть продукта, а не его недостаток.</p>
+  <p>Учётной записи нет, входить никуда не нужно. Всё, что делает приложение, остаётся на вашем устройстве.</p>
+
+  <h2>2. Правила приложения, которые стоит знать до покупки</h2>
+  <p>Vallumia устроена так намеренно. Эти правила постоянны и действуют для всех — и с абонементом, и без:</p>
+  <ul>
+    <li>снятый кадр катушки нельзя посмотреть до проявки;</li>
+    <li>кадр нельзя удалить или переснять до проявки;</li>
+    <li>фотографии нельзя импортировать из галереи в катушку или на пластину;</li>
+    <li><strong>ожидание нельзя сократить, и мы никогда не будем продавать способ его сократить.</strong> Таймеры проявки идут по настоящему времени и защищены от перевода часов устройства.</li>
+  </ul>
+  <p>Если что-то из этого для вас неприемлемо — приложение вам не подходит, и лучше узнать это до покупки, чем после.</p>
+
+  <h2>3. Ваши снимки</h2>
+  <p>Негативы, позитивы, пластины и заметки хранятся на вашем устройстве, внутри приложения. У нас к ним нет доступа, никуда они не отправляются, и восстановить их за вас мы не можем.</p>
+  <ul>
+    <li>Копии проявленных кадров уходят в вашу галерею — там они полностью в вашем распоряжении.</li>
+    <li>Удаление приложения удаляет всё, что оно хранит, включая катушки в проявке. Это необратимо.</li>
+    <li>Резервные копии — на вас. Что из данных приложения попадает в бэкап iCloud или компьютера, описано в политике конфиденциальности.</li>
+  </ul>
+  <p>Права на снятые вами изображения остаются вашими целиком. Мы на них не претендуем.</p>
+
+  <h2>4. Абонемент «Лаборатория»</h2>
+  <p>Часть возможностей приложения открывает платный абонемент «Лаборатория». Что именно он открывает, приложение показывает в момент покупки, и со временем это может меняться; на день написания условий — это:</p>
+  <ul>
+    <li>марки плёнки из кодекса, включая сезонные лимитные издания в их окна;</li>
+    <li>вторая катушка, идущая параллельно первой;</li>
+    <li>копии полного размера в галерее.</li>
+  </ul>
+  <p>Абонемент предлагается месячным планом, годовым планом и единовременной покупкой «навсегда». Цены показываются ровно те, что назвал App Store для вашего региона; в разных регионах они разные и со временем могут меняться. Выдуманных цен приложение не показывает никогда.</p>
+  <p>Лимитные издания, взятые в коллекцию, пока абонемент действовал, остаются вашими и после его окончания.</p>
+
+  <h2>5. Пробный период</h2>
+  <p>Годовой план может предлагаться с бесплатным пробным периодом. Если он есть, приложение до покупки называет его срок и цену, которая спишется после него.</p>
+  <ul>
+    <li>Проба доступна, только если ваша учётная запись Apple имеет на неё право. Право определяет Apple, не мы.</li>
+    <li>Если вы оформляете подписку во время пробы, неиспользованная часть пробы сгорает.</li>
+    <li>Если не отменить подписку не позже чем за 24 часа до конца пробы, она автоматически станет платной.</li>
+  </ul>
+
+  <h2>6. Автопродление и отмена</h2>
+  <ul>
+    <li>Подписка продлевается сама в конце каждого периода, если автопродление не отключено не позже чем за 24 часа до конца периода.</li>
+    <li>Списание проходит по вашей учётной записи Apple в течение 24 часов до начала нового периода, по цене, действующей для вашего плана на тот момент.</li>
+    <li>Управлять подпиской и отменять её можно в настройках учётной записи Apple: <em>Настройки → ваше имя → Подписки</em>. Приложение умеет открыть эту страницу, но отменить подписку можете только вы.</li>
+    <li>Отмена прекращает будущие продления. Уже оплаченный период она не сокращает и не возвращает.</li>
+    <li>Удаление приложения подписку <strong>не отменяет</strong>.</li>
+  </ul>
+
+  <h2>7. Покупка «навсегда»</h2>
+  <p>План «навсегда» — единовременный платёж, а не подписка: продлевать нечего и отменять нечего. Он открывает то же, что и подписка, пока приложение существует и работает на вашем устройстве. Обещанием вечной разработки и поддержки он не является.</p>
+
+  <h2>8. Восстановление покупок</h2>
+  <p>Покупки привязаны к вашей учётной записи Apple. На новом устройстве или после переустановки доступ возвращает кнопка <em>«Восстановить покупки»</em> в приложении. К вашим снимкам покупки не привязаны: восстановление не возвращает катушки и пластины.</p>
+
+  <h2>9. Оплата и возвраты</h2>
+  <p>Все покупки проводит Apple через App Store. Ваших платёжных данных мы не видим и не обрабатываем, и вернуть деньги не можем. Заявление на возврат подаётся Apple на <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. Решение о возврате принимает Apple по своим правилам.</p>
+
+  <h2>10. Изменения приложения и условий</h2>
+  <p>Приложение меняется: что-то появляется, что-то переделывается или уходит. Правила из пункта 2 — та часть, которую мы обязуемся сохранять.</p>
+  <p>Эти условия мы можем обновлять. Дата наверху говорит, когда они менялись в последний раз. Продолжая пользоваться приложением после изменения, вы принимаете новую редакцию; если не принимаете — прекратите пользоваться приложением и отмените подписку.</p>
+
+  <h2>11. Допустимое использование</h2>
+  <p>Пользуйтесь приложением законно. Не пытайтесь вскрывать, декомпилировать или обходить платную часть приложения и его таймеры и не используйте приложение для съёмки того, что запрещено законом в вашей стране.</p>
+
+  <h2>12. Интеллектуальная собственность</h2>
+  <p>Приложение, его имя, интерфейс, графика и профили эмуляции плёнки принадлежат нам и передаются вам по лицензии, а не продаются. Вы получаете личную непередаваемую лицензию на использование приложения на устройствах Apple, которыми владеете или управляете, в пределах, разрешённых условиями App Store. Снятые вами изображения — ваши.</p>
+
+  <h2>13. Отказ от гарантий</h2>
+  <p>Приложение предоставляется «как есть». В пределах, допускаемых законом, мы отказываемся от любых гарантий, прямых и подразумеваемых, включая пригодность для конкретной цели. Мы не гарантируем, что приложение будет работать без перебоев и ошибок и что ожидаемый вами снимок переживёт сбой, вылет или поломку устройства. С незаменимым обращайтесь соответственно: это камера, которая держит свою работу на одном устройстве.</p>
+
+  <h2>14. Ограничение ответственности</h2>
+  <p>В пределах, допускаемых законом, мы не отвечаем за косвенные, побочные и последующие убытки, а также за утраченные изображения и данные. Там, где ответственность исключить нельзя, она ограничена суммой, уплаченной вами нам за приложение за двенадцать месяцев до предъявления требования.</p>
+  <p>Ничто здесь не ограничивает ваши права потребителя, которые по закону вашей страны ограничить нельзя.</p>
+
+  <h2>15. Условия, которых требует Apple</h2>
+  <p>Apple требует включить в соглашение следующее:</p>
+  <ul>
+    <li>Соглашение заключено между вами и нами, но не с Apple. За приложение и его содержимое Apple не отвечает.</li>
+    <li>Лицензия на приложение ограничена устройствами Apple, которыми вы владеете или управляете, в рамках правил использования условий App Store.</li>
+    <li>За поддержку и обслуживание приложения отвечаем мы, а не Apple; у Apple таких обязательств нет.</li>
+    <li>Если приложение не соответствует какой-либо гарантии, вы можете уведомить об этом Apple, и Apple вправе вернуть уплаченную за приложение сумму. В максимально допустимых законом пределах иных гарантийных обязательств у Apple нет.</li>
+    <li>За любые претензии к приложению отвечаем мы, а не Apple: ответственность за продукт, несоответствие требованиям закона, требования потребительского законодательства.</li>
+    <li>За разбор и защиту претензий о нарушении чьих-либо прав интеллектуальной собственности отвечаем мы, а не Apple.</li>
+    <li>Вы подтверждаете, что не находитесь в стране под эмбарго правительства США или признанной поддерживающей терроризм и не включены в списки запрещённых или ограниченных лиц правительства США.</li>
+    <li>Apple и её дочерние компании являются третьими лицами — выгодоприобретателями по этому соглашению и вправе требовать его исполнения от вас.</li>
+  </ul>
+
+  <h2>16. Применимое право</h2>
+  <p>К этим условиям применяется право {{СТРАНА}} без учёта коллизионных норм. Споры рассматриваются судами {{СУД}}, если право страны вашего проживания не даёт вам права обратиться в суд по месту жительства.</p>
+
+  <h2>17. Связь</h2>
+  <p>Вопросы по условиям и по приложению: <a href="mailto:{{ПОЧТА ПОДДЕРЖКИ}}">{{ПОЧТА ПОДДЕРЖКИ}}</a>.</p>
+  <p>Как приложение обращается с данными, описано отдельно — в <a href="../privacy/">политике конфиденциальности</a>.</p>
+
+</div>
+
+<footer>
+  <p>Vallumia · {{ИМЯ РАЗРАБОТЧИКА}}</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.langs button');
+  var blocks = document.querySelectorAll('[data-lang]');
+  var titles = { en: 'Vallumia — Terms of Use', ru: 'Vallumia — Условия использования' };
+
+  function pick() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'ru' || q === 'en') return q;
+    try {
+      var saved = localStorage.getItem('vallumia-lang');
+      if (saved === 'ru' || saved === 'en') return saved;
+    } catch (e) { /* приватный режим — просто идём дальше */ }
+    var nav = (navigator.languages || [navigator.language || 'en'])[0] || 'en';
+    return nav.toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+  }
+
+  function set(lang) {
+    blocks.forEach(function (b) { b.classList.toggle('on', b.dataset.lang === lang); });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+    try { localStorage.setItem('vallumia-lang', lang); } catch (e) { /* не сохранилось — не беда */ }
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { set(b.dataset.set); });
+  });
+
+  set(pick());
+})();
+</script>
+
 </body>
 </html>
