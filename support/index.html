@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vallumia — Support</title>
+<meta name="color-scheme" content="dark light">
+<style>
+  :root {
+    --bg: #0e0e10;
+    --fg: #e6e3dd;
+    --muted: #9a958c;
+    --faint: #6f6b64;
+    --line: #26262a;
+    --accent: #c2a669;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    margin: 0;
+    padding: 0 16px 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 40em; margin: 0 auto; }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(var(--bg) 70%, rgba(14,14,16,0));
+    padding: 20px 0 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .mark {
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .langs { display: flex; gap: 6px; flex: none; }
+  .langs button {
+    font: inherit;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .langs button[aria-pressed="true"] {
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  h1 { font-size: 27px; font-weight: 600; line-height: 1.25; margin: 24px 0 4px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 40px 0 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 16px; font-weight: 600; margin: 24px 0 4px; }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.25em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  .date { color: var(--faint); font-size: 14px; margin: 0 0 8px; }
+  .lede { color: var(--muted); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; }
+
+  /* Виден ровно один язык — тот, на котором стоит метка .on.
+     Метка проставлена в разметке (английский), поэтому и без
+     JavaScript страница показывает один текст, а не два. */
+  [data-lang] { display: none; }
+  [data-lang].on { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="mark">Vallumia</span>
+  <span class="langs">
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+    <button type="button" data-set="ru" aria-pressed="false">Русский</button>
+  </span>
+</header>
+
+<!-- ======================= ENGLISH ======================= -->
+<div data-lang="en" class="on">
+
+  <h1>Vallumia Support</h1>
+  <p class="lede">Vallumia is made by one person, and letters are answered by that person — there is no help desk behind this page. Write, and you will get a reply.</p>
+
+  <h2>1. How to reach us</h2>
+  <p>There is one channel, and it is email:</p>
+  <p><a href="mailto:pashatniouyahor@gmail.com">pashatniouyahor@gmail.com</a></p>
+  <p>Letters are read and answered personally, usually within a few days. There is no chat, no ticket number and no phone line — the mailbox above is all of it.</p>
+
+  <h2>2. What to put in your letter</h2>
+  <p>A few lines save a round trip. Please include:</p>
+  <ul>
+    <li>what happened, and what you expected instead;</li>
+    <li>your iPhone model;</li>
+    <li>your iOS version — <em>Settings → General → About</em>;</li>
+    <li>the app version — in Vallumia, <em>Settings → About → Version</em>, which shows a version and a build number.</li>
+  </ul>
+  <p>If something looks wrong on screen, a screenshot helps.</p>
+
+  <h2>3. Questions that come up often</h2>
+
+  <h3>Why can’t I see the frame I just took?</h3>
+  <p>Because that is how the app works. A roll is shot blind: there is no preview, and a frame appears only after the roll is developed. Nothing is broken — the frame is there, waiting.</p>
+
+  <h3>When will my roll be developed?</h3>
+  <p>The app shows the time left on the roll itself. Development runs on real time and takes its own course: it can’t be sped up, and there is no purchase that shortens the wait — that is a permanent rule of the app, written into the <a href="../terms/">Terms of Use</a>.</p>
+
+  <h3>Where are my developed photos?</h3>
+  <p>If you allowed access, copies of developed frames are saved to the “Vallumia” album in the Photos app. The app writes to that album and never reads your library: nothing else in Photos is seen, and photos can’t be imported into a roll or a plate.</p>
+
+  <h3>How do I restore a purchase on a new device?</h3>
+  <p>Open the <em>Codex</em> tab in the app and tap <em>Restore purchases</em> under the plans. Purchases are tied to the Apple Account that made them, so sign in with that account first. Restoring brings back the Lab; it does not bring back rolls, plates or photos, which live only on the device that made them.</p>
+
+  <h2>4. Terms and privacy</h2>
+  <p>The rules of using the app are set out in the <a href="../terms/">Terms of Use</a>. How the app handles data is described in the <a href="../privacy/">Privacy Policy</a>.</p>
+
+  <h2>5. Who we are</h2>
+  <p>Yahor Pashatniou, a private entrepreneur registered in the Republic of Armenia as PASHATNIOU YAHOR PE.</p>
+  <p>Postal address: PASHATNIOU YAHOR PE, 26a M. Khorenatsi str., office 201, Yerevan 0010, Republic of Armenia.</p>
+  <p>Email: <a href="mailto:pashatniouyahor@gmail.com">pashatniouyahor@gmail.com</a>.</p>
+
+</div>
+
+<!-- ======================= РУССКИЙ ======================= -->
+<div data-lang="ru">
+
+  <h1>Поддержка Vallumia</h1>
+  <p class="lede">Vallumia делает один человек, и на письма отвечает он же — за этой страницей нет службы поддержки. Напишите, и вам ответят.</p>
+
+  <h2>1. Как связаться</h2>
+  <p>Канал один — почта:</p>
+  <p><a href="mailto:pashatniouyahor@gmail.com">pashatniouyahor@gmail.com</a></p>
+  <p>Письма читает и отвечает на них разработчик лично, обычно в течение нескольких дней. Ни чата, ни номера обращения, ни телефона нет — есть только этот ящик.</p>
+
+  <h2>2. Что написать в письме</h2>
+  <p>Несколько строк избавят от лишней переписки. Пожалуйста, укажите:</p>
+  <ul>
+    <li>что случилось и чего вы ждали вместо этого;</li>
+    <li>модель iPhone;</li>
+    <li>версию iOS — <em>Настройки → Основные → Об этом устройстве</em>;</li>
+    <li>версию приложения — в Vallumia это <em>Настройки → О приложении → Версия</em>, там показаны версия и номер сборки.</li>
+  </ul>
+  <p>Если что-то выглядит не так на экране, помогает скриншот.</p>
+
+  <h2>3. Частые вопросы</h2>
+
+  <h3>Почему не виден только что снятый кадр?</h3>
+  <p>Так устроено приложение. Катушка снимается вслепую: предпросмотра нет, и кадр появится только после проявки. Ничего не сломалось — кадр на месте и ждёт.</p>
+
+  <h3>Когда проявится катушка?</h3>
+  <p>Срок приложение показывает у самой катушки. Проявка идёт по настоящему времени и своим чередом: ускорить её нельзя, и покупки, которая сокращает ожидание, не существует — это постоянное правило приложения, закреплённое в <a href="../terms/">условиях использования</a>.</p>
+
+  <h3>Где проявленные снимки?</h3>
+  <p>Если вы дали доступ, копии проявленных кадров сохраняются в альбом «Vallumia» в приложении «Фото». Приложение пишет в этот альбом и никогда не читает вашу галерею: ничего другого в «Фото» оно не видит, а импортировать снимки в катушку или на пластину нельзя.</p>
+
+  <h3>Как восстановить покупку на новом устройстве?</h3>
+  <p>Откройте в приложении вкладку <em>«Кодекс»</em> и нажмите <em>«Восстановить покупки»</em> под планами. Покупки привязаны к той учётной записи Apple, с которой они сделаны, — сначала войдите под ней. Восстановление возвращает «Лабораторию», но не возвращает катушки, пластины и снимки: они живут только на том устройстве, где были сняты.</p>
+
+  <h2>4. Условия и конфиденциальность</h2>
+  <p>Правила пользования приложением изложены в <a href="../terms/">условиях использования</a>. Как приложение обращается с данными, описано в <a href="../privacy/">политике конфиденциальности</a>.</p>
+
+  <h2>5. Кто мы</h2>
+  <p>Индивидуальный предприниматель Егор Пашетнёв, зарегистрированный в Республике Армения как PASHATNIOU YAHOR PE.</p>
+  <p>Почтовый адрес: PASHATNIOU YAHOR PE, Республика Армения, 0010, Ереван, ул. М. Хоренаци, д. 26а, офис 201.</p>
+  <p>Почта: <a href="mailto:pashatniouyahor@gmail.com">pashatniouyahor@gmail.com</a>.</p>
+
+</div>
+
+<footer>
+  <p>Vallumia · PASHATNIOU YAHOR PE</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.langs button');
+  var blocks = document.querySelectorAll('[data-lang]');
+  var titles = { en: 'Vallumia — Support', ru: 'Vallumia — Поддержка' };
+
+  function pick() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'ru' || q === 'en') return q;
+    try {
+      var saved = localStorage.getItem('vallumia-lang');
+      if (saved === 'ru' || saved === 'en') return saved;
+    } catch (e) { /* приватный режим — просто идём дальше */ }
+    var nav = (navigator.languages || [navigator.language || 'en'])[0] || 'en';
+    return nav.toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+  }
+
+  function set(lang) {
+    blocks.forEach(function (b) { b.classList.toggle('on', b.dataset.lang === lang); });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === lang)); });
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+    try { localStorage.setItem('vallumia-lang', lang); } catch (e) { /* не сохранилось — не беда */ }
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { set(b.dataset.set); });
+  });
+
+  set(pick());
+})();
+</script>
+
+</body>
+</html>
