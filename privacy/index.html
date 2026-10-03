@@ -102,7 +102,7 @@
 <div data-lang="en" class="on">
 
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated: September 17, 2026</p>
+  <p class="date">Last updated: October 3, 2026</p>
   <p class="lede">This policy explains what happens to your data when you use the Vallumia app for Apple devices. The app is made by Yahor Pashatniou, a private entrepreneur registered in the Republic of Armenia as PASHATNIOU YAHOR PE (“we,” “us”), and we are responsible for it.</p>
 
   <h2>1. The short version</h2>
@@ -110,7 +110,7 @@
     <li>There is no account and no sign-in. We don’t know who you are.</li>
     <li>Your photos, plates and notes stay on your device. We can’t see them and can’t retrieve them.</li>
     <li>There is no analytics or crash-reporting service in the app. Apart from the purchase records described in section 5, nothing about how you use it is sent anywhere.</li>
-    <li>Besides the App Store itself, the app makes exactly two kinds of outgoing connection: to RevenueCat, the service that manages purchases for us, and to a public time server, to keep development timers honest.</li>
+    <li>Besides the App Store itself, the app makes exactly two kinds of outgoing connection: to RevenueCat, the service that manages purchases for us, and to Apple’s public time server, to keep development timers honest.</li>
     <li>We don’t track you, don’t use advertising identifiers, and don’t sell or share anything with data brokers.</li>
   </ul>
 
@@ -121,7 +121,7 @@
     <li>text notes and voice notes attached to frames;</li>
     <li>the state of your rolls, plates and timers, and which film stocks you own;</li>
     <li>your settings;</li>
-    <li>a small local journal of what happened in the app — the kind of event (a roll was sent to the lab, an envelope was opened) and the day it happened. It holds no image content, no file paths and no text of your notes, and it never leaves the device.</li>
+    <li>a small local journal of what happened in the app — the kind of event (a roll was sent to the lab, an envelope was opened), the moment and the day it happened. It holds no image content, no file paths and no text of your notes, and it never leaves the device.</li>
   </ul>
   <p>Negatives are not visible outside the app: the app doesn’t expose its files to the Files app or to a computer.</p>
 
@@ -129,18 +129,19 @@
   <ul>
     <li><strong>Camera</strong> — to take photographs. Without it the app can’t do the one thing it is for.</li>
     <li><strong>Microphone</strong> — only to record a voice note for a frame. Refusing it leaves everything else working.</li>
-    <li><strong>Photo library</strong> — to save copies of developed frames into an album of its own. iOS asks for access to Photos: putting copies into a named album requires it. The app never reads your library and can’t import anything from it — importing is forbidden by its own rules.</li>
+    <li><strong>Photo library</strong> — to save copies of developed frames into your photo library. The app asks only for add-only access: it puts copies in, creates no album of its own (copies appear among your recent photos), never reads your library and can’t import anything from it — importing is forbidden by its own rules.</li>
   </ul>
   <p>Each permission is asked for at the moment it is first needed, and each can be withdrawn later in iOS Settings. Nothing the camera or microphone records is sent anywhere by us.</p>
 
   <h2>4. Copies in your photo library</h2>
-  <p>When a roll or a plate is developed and you have allowed access to your photo library, the app saves copies of the frames there — reduced in size without the Lab, full size with it. From that moment those copies live under Apple’s rules and your own settings: if iCloud Photos is turned on, Apple syncs them like any other photo. That processing is Apple’s, not ours, and it is described in Apple’s privacy policy.</p>
+  <p>When a roll or a plate is developed and you have allowed access to your photo library, the app saves copies of the frames there — reduced in size without the Lab, full size with it — dated with the moment the frame was taken. From that moment those copies live under Apple’s rules and your own settings: if iCloud Photos is turned on, Apple syncs them like any other photo. That processing is Apple’s, not ours, and it is described in Apple’s privacy policy.</p>
 
   <h2>5. Purchases</h2>
   <p>Payments are processed by Apple through the App Store. We never see or handle your card, your Apple Account or your payment details.</p>
   <p>To know whether the Lab is active — and to restore it on a new device — the app uses <a href="https://www.revenuecat.com/privacy">RevenueCat</a>, a purchase-management service acting on our behalf. When the app launches, and when you buy or restore a purchase, RevenueCat receives:</p>
   <ul>
     <li>an anonymous identifier that its SDK generates for the installation — not your name, email or Apple Account;</li>
+    <li>the identifier iOS gives this app on your device (the “identifier for vendor”) — not an advertising identifier, and not linked to your name or Apple Account;</li>
     <li>information about the purchase itself: which product, when, whether it is active, whether a trial was used;</li>
     <li>technical information that comes with any network request: device model, operating system version, country and the IP address of the connection.</li>
   </ul>
@@ -148,8 +149,8 @@
   <p>We use these purchase records for two things: to unlock what you paid for, and to see overall subscription statistics in RevenueCat’s dashboard. RevenueCat processes the data only on our behalf and on our instructions, under a data processing agreement, and doesn’t use it for its own purposes; its privacy policy is linked above. RevenueCat is based in the United States; the transfer of data there is covered by the standard contractual clauses approved by the European Commission that form part of that agreement.</p>
 
   <h2>6. Checking the time</h2>
-  <p>Development takes real days, and the app protects that from a device clock that has been moved. At launch, and after a restore from a backup, the app asks a public NTP time server what time it is.</p>
-  <p>The request contains nothing about you — it is a time packet, not a message. As with any internet request, the server on the other side sees the IP address your device connects from. If there is no network, the app falls back to the device clock and keeps working.</p>
+  <p>Development takes real days, and the app protects that from a device clock that has been moved. At launch, every time you return to the app, and at the start of the background time iOS gives the app for development, it asks Apple’s public time server (time.apple.com) what time it is.</p>
+  <p>The request contains nothing about you — it is a time packet, not a message. As with any internet request, Apple’s server sees the IP address your device connects from. If there is no network, the app falls back to the device clock and keeps working.</p>
 
   <h2>7. Notifications</h2>
   <p>The app sends one kind of notification — that your film, a roll or a plate, is ready. It is a local notification: iOS schedules it on your device. There is no push server, no push token, and nothing about it leaves your phone.</p>
@@ -158,11 +159,11 @@
   <p>Occasionally the app asks iOS to show Apple’s standard rating dialog. The rating you leave goes to Apple, not to us, and we don’t learn what you rated. The only trace on our side is a line in the local journal on your device saying that the dialog was requested — so you aren’t asked again too soon.</p>
 
   <h2>9. No analytics and no tracking</h2>
-  <p>There is no analytics or crash-reporting service in the app. We don’t use advertising identifiers, we don’t track you across apps or websites, and we don’t share anything with advertising networks or data brokers. The app’s privacy manifest and its App Store privacy label say the same: no tracking, and a single collected category — purchase history, described in section 5 — which is not linked to your identity.</p>
+  <p>There is no analytics or crash-reporting service in the app. We don’t use advertising identifiers, we don’t track you across apps or websites, and we don’t share anything with advertising networks or data brokers. The app’s App Store privacy label says the same: no tracking, and the only data collected is what section 5 describes — purchase history, the anonymous purchase identifier and the device identifier RevenueCat’s SDK sends — none of it linked to your identity.</p>
   <p>Separately from the app, Apple may give us aggregated, anonymous statistics about crashes and usage — but only if you allowed sharing them in your iOS settings. We can’t connect those numbers to a person, and you can turn the sharing off in <em>Settings → Privacy &amp; Security → Analytics &amp; Improvements</em>.</p>
 
   <h2>10. Backups</h2>
-  <p>The app’s data lives in its app container, which is included in your device backup and transferred to a new device. That means your negatives, your archive and your notes can survive a lost phone — through Apple’s backup, encrypted and stored by Apple under its terms. We have no access to your backups.</p>
+  <p>The app’s data lives in its app container, which is included in your device backup and transferred to a new device. That means your negatives, your archive and your notes can survive a lost phone — through your device backup: an iCloud backup is encrypted and stored by Apple under its terms, and a backup on a computer is encrypted only if you turn that on. We have no access to your backups.</p>
 
   <h2>11. Children</h2>
   <p>The app is not directed at children under 13, or under the higher age your country sets for consenting to data processing. It collects no data that would identify anyone, of any age, and it has no accounts, no messaging and no social features.</p>
@@ -203,7 +204,7 @@
 <div data-lang="ru">
 
   <h1>Политика конфиденциальности</h1>
-  <p class="date">Обновлено: 17 сентября 2026</p>
+  <p class="date">Обновлено: 3 октября 2026</p>
   <p class="lede">Здесь описано, что происходит с вашими данными, когда вы пользуетесь приложением Vallumia для устройств Apple. Приложение сделал индивидуальный предприниматель Егор Пашетнёв, зарегистрированный в Республике Армения как PASHATNIOU YAHOR PE («мы»), и он же за него отвечает.</p>
 
   <h2>1. Коротко</h2>
@@ -211,7 +212,7 @@
     <li>Учётной записи нет, входить никуда не нужно. Мы не знаем, кто вы.</li>
     <li>Ваши снимки, пластины и заметки остаются на устройстве. Мы их не видим и достать не можем.</li>
     <li>Ни аналитики, ни отчётов о сбоях в приложении нет. Кроме записей о покупках, описанных в пункте 5, сведения о том, как вы им пользуетесь, никуда не отправляются.</li>
-    <li>Помимо самого App Store, наружу приложение обращается ровно двумя способами: к RevenueCat — службе, которая ведёт покупки от нашего имени, — и к публичному серверу времени, чтобы таймеры проявки были честными.</li>
+    <li>Помимо самого App Store, наружу приложение обращается ровно двумя способами: к RevenueCat — службе, которая ведёт покупки от нашего имени, — и к публичному серверу времени Apple, чтобы таймеры проявки были честными.</li>
     <li>Мы не отслеживаем вас, не используем рекламные идентификаторы и ничего не передаём рекламным сетям и брокерам данных.</li>
   </ul>
 
@@ -222,7 +223,7 @@
     <li>текстовые и голосовые заметки к кадрам;</li>
     <li>состояние катушек, пластин и таймеров, а также то, какие марки плёнки у вас есть;</li>
     <li>ваши настройки;</li>
-    <li>небольшой локальный журнал происходившего в приложении — вид события (катушка сдана в лабораторию, конверт вскрыт) и день, когда оно случилось. В нём нет ни изображений, ни путей к файлам, ни текста ваших заметок, и устройство он не покидает.</li>
+    <li>небольшой локальный журнал происходившего в приложении — вид события (катушка сдана в лабораторию, конверт вскрыт), его момент и день. В нём нет ни изображений, ни путей к файлам, ни текста ваших заметок, и устройство он не покидает.</li>
   </ul>
   <p>Негативы не видны за пределами приложения: свои файлы оно не показывает ни программе «Файлы», ни компьютеру.</p>
 
@@ -230,18 +231,19 @@
   <ul>
     <li><strong>Камера</strong> — чтобы снимать. Без неё приложение не может делать то единственное, ради чего существует.</li>
     <li><strong>Микрофон</strong> — только чтобы записать голосовую заметку к кадру. Откажете — остальное продолжит работать.</li>
-    <li><strong>Галерея</strong> — чтобы складывать копии проявленных кадров в собственный альбом. iOS спрашивает доступ к «Фото»: положить копию в именованный альбом без него нельзя. Читать вашу галерею приложение не читает и импортировать из неё ничего не может — импорт запрещён его же правилами.</li>
+    <li><strong>Галерея</strong> — чтобы складывать копии проявленных кадров в вашу галерею. Приложение просит доступ только на добавление: копии оно кладёт, своего альбома не заводит (копии — среди недавних), галерею не читает и импортировать из неё ничего не может — импорт запрещён его же правилами.</li>
   </ul>
   <p>Каждое разрешение спрашивается в тот момент, когда впервые нужно, и каждое можно отозвать позже в настройках iOS. Ничего из того, что записывает камера или микрофон, мы никуда не отправляем.</p>
 
   <h2>4. Копии в вашей галерее</h2>
-  <p>Когда катушка или пластина проявляется и вы разрешили доступ к галерее, приложение сохраняет в неё копии кадров — уменьшенные без «Лаборатории», полного размера с ней. С этого момента копии живут по правилам Apple и по вашим настройкам: если включены «Фото iCloud», Apple синхронизирует их, как любую другую фотографию. Это обработка Apple, не наша, и описана она в политике конфиденциальности Apple.</p>
+  <p>Когда катушка или пластина проявляется и вы разрешили доступ к галерее, приложение сохраняет в неё копии кадров — уменьшенные без «Лаборатории», полного размера с ней — с датой момента съёмки. С этого момента копии живут по правилам Apple и по вашим настройкам: если включены «Фото iCloud», Apple синхронизирует их, как любую другую фотографию. Это обработка Apple, не наша, и описана она в политике конфиденциальности Apple.</p>
 
   <h2>5. Покупки</h2>
   <p>Все платежи проводит Apple через App Store. Вашу карту, вашу учётную запись Apple и платёжные данные мы не видим и не обрабатываем.</p>
   <p>Чтобы знать, действует ли «Лаборатория», и чтобы восстановить её на новом устройстве, приложение пользуется службой <a href="https://www.revenuecat.com/privacy">RevenueCat</a> — она ведёт покупки от нашего имени. При запуске приложения, а также когда вы покупаете или восстанавливаете покупку, RevenueCat получает:</p>
   <ul>
     <li>анонимный идентификатор, который её библиотека создаёт для установки приложения, — не имя, не почту и не вашу учётную запись Apple;</li>
+    <li>идентификатор, который iOS выдаёт этому приложению на вашем устройстве («идентификатор поставщика»), — не рекламный и не связанный с вашим именем или учётной записью Apple;</li>
     <li>сведения о самой покупке: какой продукт, когда, действует ли он, была ли использована проба;</li>
     <li>техническую информацию, которая сопровождает любой сетевой запрос: модель устройства, версию операционной системы, страну и IP-адрес соединения.</li>
   </ul>
@@ -249,8 +251,8 @@
   <p>Записи о покупках нужны нам для двух вещей: чтобы открыть то, за что вы заплатили, и чтобы видеть общую статистику подписок в панели RevenueCat. RevenueCat обрабатывает эти данные только от нашего имени и по нашим указаниям, на основании соглашения об обработке данных, и не использует их в своих целях; её политика конфиденциальности — по ссылке выше. RevenueCat находится в США; передача данных туда защищена стандартными договорными положениями, утверждёнными Европейской комиссией, которые входят в это соглашение.</p>
 
   <h2>6. Сверка времени</h2>
-  <p>Проявка идёт настоящими днями, и приложение защищает это от переведённых часов устройства. При запуске и после восстановления из резервной копии оно спрашивает у публичного NTP-сервера, сколько сейчас времени.</p>
-  <p>В запросе нет ничего о вас — это пакет со временем, а не сообщение. Как и при любом обращении в интернет, сервер на той стороне видит IP-адрес, с которого пришёл запрос. Сети нет — приложение возвращается к часам устройства и продолжает работать.</p>
+  <p>Проявка идёт настоящими днями, и приложение защищает это от переведённых часов устройства. При запуске, при каждом возвращении в приложение и в начале фонового времени, которое iOS даёт приложению на проявку, оно спрашивает у публичного сервера времени Apple (time.apple.com), сколько сейчас времени.</p>
+  <p>В запросе нет ничего о вас — это пакет со временем, а не сообщение. Как и при любом обращении в интернет, сервер Apple видит IP-адрес, с которого пришёл запрос. Сети нет — приложение возвращается к часам устройства и продолжает работать.</p>
 
   <h2>7. Уведомления</h2>
   <p>Приложение отправляет уведомление одного рода — что ваша плёнка, катушка или пластина, готова. Оно локальное: iOS планирует его на вашем устройстве. Пуш-сервера нет, пуш-токена нет, наружу с телефона по этому поводу не уходит ничего.</p>
@@ -259,11 +261,11 @@
   <p>Иногда приложение просит iOS показать стандартное окно оценки Apple. Оценка уходит к Apple, а не к нам, и что вы поставили, мы не узнаём. Единственный след с нашей стороны — строка в локальном журнале на вашем устройстве о том, что окно запрашивалось: чтобы не просить снова слишком скоро.</p>
 
   <h2>9. Ни аналитики, ни отслеживания</h2>
-  <p>В приложении нет ни аналитической службы, ни службы отчётов о сбоях. Мы не используем рекламные идентификаторы, не следим за вами в других приложениях и на сайтах, ничего не передаём рекламным сетям и брокерам данных. Манифест приватности приложения и его карточка конфиденциальности в App Store говорят то же самое: отслеживания нет, а единственная собираемая категория — история покупок, описанная в пункте 5, — не связана с вашей личностью.</p>
+  <p>В приложении нет ни аналитической службы, ни службы отчётов о сбоях. Мы не используем рекламные идентификаторы, не следим за вами в других приложениях и на сайтах, ничего не передаём рекламным сетям и брокерам данных. Карточка конфиденциальности приложения в App Store говорит то же самое: отслеживания нет, а собирается только описанное в пункте 5 — история покупок, анонимный идентификатор покупателя и идентификатор устройства, который отправляет библиотека RevenueCat, — и ничто из этого не связано с вашей личностью.</p>
   <p>Отдельно от приложения Apple может передавать нам обобщённую обезличенную статистику сбоев и использования — но только если вы разрешили её отправку в настройках iOS. Связать эти цифры с человеком мы не можем, а отключить отправку можно в <em>Настройки → Конфиденциальность и безопасность → Аналитика и улучшения</em>.</p>
 
   <h2>10. Резервные копии</h2>
-  <p>Данные приложения лежат в его контейнере, а тот входит в резервную копию устройства и переезжает на новое устройство. Это значит, что негативы, архив и заметки могут пережить потерю телефона — через резервную копию Apple, зашифрованную и хранимую Apple по её правилам. Доступа к вашим резервным копиям у нас нет.</p>
+  <p>Данные приложения лежат в его контейнере, а тот входит в резервную копию устройства и переезжает на новое устройство. Это значит, что негативы, архив и заметки могут пережить потерю телефона — через резервную копию устройства: копию в iCloud шифрует и хранит Apple по своим правилам, а копия на компьютере шифруется, только если это включить. Доступа к вашим резервным копиям у нас нет.</p>
 
   <h2>11. Дети</h2>
   <p>Приложение не адресовано детям младше 13 лет или иного, более высокого возраста, с которого по закону вашей страны можно соглашаться на обработку данных. Оно не собирает данных, по которым можно узнать человека любого возраста, в нём нет учётных записей, переписки и социальных функций.</p>
